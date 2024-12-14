@@ -1,0 +1,28 @@
+#problem 2
+def generate_series(a: int):
+    """
+    Generate a series of odd numbers up to the input number `a`.
+
+    :param a: int, number of terms in the series
+    :return: list of odd numbers
+    """
+    if a <= 0:
+        return "Input must be a positive integer!"
+    
+    series = []
+    current = 1
+
+    for _ in range(a):
+        series.append(current)
+        current += 2
+
+    return series
+
+
+if __name__ == "__main__":
+    try:
+        a = int(input("Enter a positive integer: "))
+        result = generate_series(a)
+        print(f"Output: {', '.join(map(str, result))}")
+    except ValueError:
+        print("Invalid input! Please enter a positive integer.")
