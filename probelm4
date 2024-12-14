@@ -1,0 +1,23 @@
+#probelm 4
+def count_multiples(numbers: list):
+    """
+    Count how many numbers in the list are multiples of integers from 1 to 9.
+
+    :param numbers: list of integers
+    :return: dictionary with keys as numbers from 1 to 9 and values as their counts
+    """
+    multiples_count = {i: 0 for i in range(1, 10)}
+
+    for num in numbers:
+        for divisor in multiples_count:
+            if num % divisor == 0:
+                multiples_count[divisor] += 1
+
+    return multiples_count
+
+if __name__ == "__main__":
+    input_numbers = [1, 2, 8, 9, 12, 46, 76, 82, 15, 20, 30]
+    result = count_multiples(input_numbers)
+    print("Output:")
+    print(result)
+
