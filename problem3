@@ -1,0 +1,28 @@
+#problem 3
+def generate_series(a: int):
+    """
+    Generate a series of odd numbers based on input `a`,
+    where the number of terms in the series matches the largest odd number <= `a`.
+
+    :param a: int, the upper limit for odd numbers in the series
+    :return: list of odd numbers
+    """
+    if a <= 0:
+        return "Input must be a positive integer!"
+
+    series = []
+    current = 1
+
+    while current <= a:
+        series.append(current)
+        current += 2
+
+    return series
+
+if __name__ == "__main__":
+    try:
+        a = int(input("Enter a positive integer: "))
+        result = generate_series(a)
+        print(f"Output: {', '.join(map(str, result))}")
+    except ValueError:
+        print("Invalid input! Please enter a positive integer.")
